@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GameAPI:jar2">
+    <output-path>$USER_HOME$/Documents/Server/TestingServer/plugins</output-path>
+    <root id="archive" name="GameAPI.jar">
+      <element id="module-output" name="GameAPI" />
+      <element id="library" level="project" name="NBeeT-1.0" />
+      <element id="library" level="project" name="guava-18.0" />
+      <element id="library" level="project" name="jsoup-1.8.3" />
+    </root>
+  </artifact>
+</component>

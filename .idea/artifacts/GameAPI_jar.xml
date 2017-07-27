@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GameAPI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GameAPI_jar</output-path>
+    <root id="archive" name="GameAPI.jar">
+      <element id="module-output" name="GameAPI" />
+      <element id="library" level="project" name="BarAPI (3)" />
+      <element id="library" level="project" name="jsoup-1.8.3" />
+    </root>
+  </artifact>
+</component>
