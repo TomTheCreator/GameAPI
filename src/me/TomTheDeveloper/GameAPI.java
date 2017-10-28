@@ -116,6 +116,12 @@ public class GameAPI {
         return false;
     }
 
+    public boolean is1_12_R1(){
+        if(getVersion().equalsIgnoreCase("v1_12_R1"))
+            return true;
+        return false;
+    }
+
     public boolean is1_7_R4(){
         if(getVersion().equalsIgnoreCase("v1_7_R4"))
             return true;
@@ -189,7 +195,7 @@ public class GameAPI {
         this.kitHandler.setDefaultKit(new DefaultKit());
 
         plugin.getServer().getPluginManager().registerEvents(new onSpectate(this), plugin);
-        plugin.getServer().getPluginManager().registerEvents(new onDoubleJump(this), plugin);
+       // plugin.getServer().getPluginManager().registerEvents(new onDoubleJump(this), plugin);
         if(!this.getAllowBuilding()) {
             plugin.getServer().getPluginManager().registerEvents(new onBuild(this), plugin);
         }
@@ -279,25 +285,19 @@ public class GameAPI {
 
     @SuppressWarnings("unchecked")
     public void register1_12_R1_Entity(String name, int id, Class<? extends net.minecraft.server.v1_12_R1.EntityInsentient> customClass) {
-        MinecraftKey key = new MinecraftKey(name);
-        ((Set<MinecraftKey>) getPrivateStatic(EntityTypes.class, "d")).add(key);
-        ((RegistryMaterials<MinecraftKey,Class<?>>) getPrivateStatic(EntityTypes.class, "b")).a(id, key, customClass);
+
+        MinecraftKey minecraftKey = new MinecraftKey(name);
+        EntityTypes.b.a(id, minecraftKey, customClass);
+    }
+
+    public static void addCustomEntity(int entityId, String entityName, Class<? extends Entity> entityClass) {
+
     }
 
     public void loadInstances(){
 
     }
 
-    private static Object getPrivateStatic(final Class<?> clazz, final String f) {
-        try {
-            Field field = clazz.getDeclaredField(f);
-            field.setAccessible(true);
-            return field.get(null);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 
     public void registerEntity1_7_10(String name, int id, Class<? extends net.minecraft.server.v1_7_R4.EntityInsentient> customClass) {
         try {
@@ -445,6 +445,8 @@ public class GameAPI {
         plugin.getConfig().set(path, location);
         plugin.saveConfig();
     }
+
+
 
     public Location getLocation(String path) {
         String[] loc = plugin.getConfig().getString(path).split("\\,");

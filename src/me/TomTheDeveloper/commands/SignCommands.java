@@ -42,6 +42,10 @@ public class SignCommands implements CommandExecutor {
             Selection selection = plugin.getWorldEditPlugin().getSelection(player);
             int i = plugin.getPlugin().getConfig().getConfigurationSection("signs").getKeys(false).size();
              i = i+2;
+            if(selection == null){
+                player.sendMessage("You have to select a region with 1 or more signs in it with World Edit before clicking on the sign");
+                return true;
+            }
             if(selection instanceof CuboidSelection){
                 CuboidSelection cuboidSelection = (CuboidSelection) selection;
                 Vector min = cuboidSelection.getNativeMinimumPoint();

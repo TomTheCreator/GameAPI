@@ -9,20 +9,14 @@ import me.TomTheDeveloper.Handlers.ChatManager;
 import me.TomTheDeveloper.Handlers.GameInstanceManager;
 import me.TomTheDeveloper.Utils.Util;
 import me.TomTheDeveloper.setup.SetupInventory;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Tom on 7/08/2014.
@@ -40,7 +34,6 @@ public class InstanceCommands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        System.out.print("Woohoo!" + plugin.getGameName());
         if(!(commandSender instanceof Player))
             return true;
         Player player = (Player) commandSender;
@@ -65,16 +58,16 @@ public class InstanceCommands implements CommandExecutor {
                 player.sendMessage(ChatColor.RED + "ARENA DOES NOT EXIST!");
                 return true;
             }else{
-                Location location = player.getTargetBlock((HashSet<Byte>)null,10).getLocation();
+                Location location = player.getTargetBlock((HashSet<Material>)null,10).getLocation();
                 if(location.getBlock().getState() instanceof Sign) {
                     GameInstance gameInstance = plugin.getGameInstanceManager().getGameInstance(strings[0]);
                     int keys = 0;
                     if (plugin.getPlugin().getConfig().contains("signs." + gameInstance.getID())) {
                         keys = plugin.getPlugin().getConfig().getConfigurationSection("signs." + gameInstance.getID()).getKeys(false).size();
                     }
-                    plugin.saveLoc("newsigns." + gameInstance.getID() + "." + (keys + 1), player.getTargetBlock((HashSet<Byte>) null, 10).getLocation());
+                    plugin.saveLoc("newsigns." + gameInstance.getID() + "." + (keys + 1), player.getTargetBlock((HashSet<Material>) null, 10).getLocation());
                     player.sendMessage(ChatColor.GREEN + "SIGN ADDED!");
-                    gameInstance.addSign(player.getTargetBlock((HashSet<Byte>) null, 10).getLocation());
+                    gameInstance.addSign(player.getTargetBlock((HashSet<Material>) null, 10).getLocation());
                 }else{
                     player.sendMessage(ChatColor.RED + "You have to look at a sign to perform this command!");
                 }

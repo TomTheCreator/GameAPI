@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -77,7 +78,7 @@ public class InventoryManager {
             int invMaxStackSize = invConfig.getInt("Max stack size", 64);
             InventoryHolder invHolder = null;
             if (invConfig.contains("Holder")) invHolder = Bukkit.getPlayer(invConfig.getString("Holder"));
-            inventory = Bukkit.getServer().createInventory(invHolder, invSize, Integer.toString(invTitle));
+            inventory = Bukkit.getServer().createInventory(invHolder, InventoryType.PLAYER, Integer.toString(invTitle));
             inventory.setMaxStackSize(invMaxStackSize);
             try {
                 ItemStack[] invContents = new ItemStack[invSize];
@@ -93,6 +94,8 @@ public class InventoryManager {
             file.delete();
             return inventory;
         } catch (Exception ex) {
+
+            ex.printStackTrace();
             return null;
         }
     }
@@ -122,11 +125,13 @@ public class InventoryManager {
 
         }
         Inventory inventory = this.getInventoryFromFile(player.getUniqueId().toString());
+
         for(Integer i=0;i<inventory.getContents().length;i++) {
             if (inventory.getItem(i) != null)
                 player.getInventory().setItem(i, inventory.getItem(i));
 
         }
+
         player.updateInventory();
         player.setLevel( Integer.valueOf(inventory.getTitle()));
 

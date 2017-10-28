@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="GameAPI:jar2">
-    <output-path>$USER_HOME$/Documents/Server/TestingServer/plugins</output-path>
+    <output-path>$USER_HOME$/Documents/Spigot/OwnBuilds</output-path>
     <root id="archive" name="GameAPI.jar">
       <element id="module-output" name="GameAPI" />
       <element id="library" level="project" name="NBeeT-1.0" />

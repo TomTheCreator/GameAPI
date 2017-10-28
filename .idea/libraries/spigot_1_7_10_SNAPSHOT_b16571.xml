@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="spigot-1.7.10-SNAPSHOT-b16571">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.7.10-SNAPSHOT-b1657.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.9.2-R0.1-SNAPSHOT-latest.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.7.10-SNAPSHOT-b1657.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.9.2-R0.1-SNAPSHOT-latest.jar!/" />
+    </SOURCES>
+  </library>
+</component>

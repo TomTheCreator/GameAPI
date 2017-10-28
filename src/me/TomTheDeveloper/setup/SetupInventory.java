@@ -69,6 +69,7 @@ public class SetupInventory {
                 .lore(ChatColor.GRAY + "Replace this nametag with another nametag")
                 .lore(ChatColor.GRAY + "that is named as the mapname")
                 .build(), gameInstance.getPlugin().getAbreviation() + " " + gameInstance.getID() + " set MAPNAME <NAME>");
+
         inventory.addItem((new ItemBuilder(new ItemStack(Material.APPLE))
                 .name(ChatColor.GOLD + "Add villager spawns")
                 .lore(ChatColor.GRAY + "Click to add a villager spawn")

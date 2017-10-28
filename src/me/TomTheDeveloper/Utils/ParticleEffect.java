@@ -344,7 +344,7 @@ public enum ParticleEffect {
      * <li>It looks like a little piece with an item texture
      * </ul>
      */
-   ITEM_CRACK("itemcrack", 36, -1, ParticleProperty.DIRECTIONAL, ParticleProperty.REQUIRES_DATA),
+    ITEM_CRACK("itemcrack", 36, -1, ParticleProperty.DIRECTIONAL, ParticleProperty.REQUIRES_DATA),
     /**
      * A particle effect which is displayed when breaking blocks or sprinting:
      * <ul>
@@ -359,7 +359,7 @@ public enum ParticleEffect {
      * <li>It looks like a little piece with a block texture
      * </ul>
      */
-     BLOCK_DUST("blockdust", 38, 7, ParticleProperty.DIRECTIONAL, ParticleProperty.REQUIRES_DATA),
+    BLOCK_DUST("blockdust", 38, 7, ParticleProperty.DIRECTIONAL, ParticleProperty.REQUIRES_DATA),
     /**
      * A particle effect which is displayed when rain hits the ground:
      * <ul>
@@ -367,14 +367,14 @@ public enum ParticleEffect {
      * <li>The speed value has no influence on this particle effect
      * </ul>
      */
-       WATER_DROP("waterdrop", 39, 8),
+    WATER_DROP("waterdrop", 39, 8),
     /**
      * A particle effect which is currently unused:
      * <ul>
      * <li>It has no visual effect
      * </ul>
      */
-      ITEM_TAKE("ItemTake", 40, 8),
+    ITEM_TAKE("ItemTake", 40, 8),
     /**
      * A particle effect which is displayed by elder guardians:
      * <ul>
@@ -383,7 +383,7 @@ public enum ParticleEffect {
      * <li>The offset values have no influence on this particle effect
      * </ul>
      */
-      MOB_APPEARANCE("mobappearance", 41, 8);
+    MOB_APPEARANCE("mobappearance", 41, 8);
 
 
     private static final Map<String, ParticleEffect> NAME_MAP = new HashMap<String, ParticleEffect>();
@@ -530,7 +530,7 @@ public enum ParticleEffect {
      * @param data Particle data
      * @return Whether the data type is correct or not
      */
-   private static boolean isDataCorrect(ParticleEffect effect, ParticleData data) {
+    private static boolean isDataCorrect(ParticleEffect effect, ParticleData data) {
         return ((effect == BLOCK_CRACK || effect == BLOCK_DUST) && data instanceof BlockData) || (effect == ITEM_CRACK && data instanceof ItemData);
     }
 
@@ -782,8 +782,8 @@ public enum ParticleEffect {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
         if (!isDataCorrect(this, data)) {
-           throw new ParticleDataException("The particle data type is incorrect");
-       }
+            throw new ParticleDataException("The particle data type is incorrect");
+        }
         new ParticlePacket(this, offsetX, offsetY, offsetZ, speed, amount, range > 256, data).sendTo(center, range);
     }
 
@@ -810,8 +810,8 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.REQUIRES_DATA)) {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
-       if (!isDataCorrect(this, data)) {
-           throw new ParticleDataException("The particle data type is incorrect");
+        if (!isDataCorrect(this, data)) {
+            throw new ParticleDataException("The particle data type is incorrect");
         }
         new ParticlePacket(this, offsetX, offsetY, offsetZ, speed, amount, isLongDistance(center, players), data).sendTo(center, players);
     }
@@ -1359,7 +1359,7 @@ public enum ParticleEffect {
          * @param longDistance Indicates whether the maximum distance is increased from 256 to 65536
          * @param data Data of the effect
          * @throws IllegalArgumentException If the speed is lower than 0
-         //* @see #ParticleEffect(ParticleEffect, float, float, float, float, int, boolean, ParticleData)
+        //* @see #ParticleEffect(ParticleEffect, float, float, float, float, int, boolean, ParticleData)
          */
         public ParticlePacket(ParticleEffect effect, Vector direction, float speed, boolean longDistance, ParticleData data) throws IllegalArgumentException {
             this(effect, (float) direction.getX(), (float) direction.getY(), (float) direction.getZ(), speed, 0, longDistance, data);

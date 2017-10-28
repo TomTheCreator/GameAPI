@@ -5,27 +5,16 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="library" exported="" name="spigot-1.12.2" level="project" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.googlecode.json-simple:json-simple:1.1" level="project" />
-    <orderEntry type="library" name="NBeeT-1.0" level="project" />
-    <orderEntry type="library" name="guava-18.0" level="project" />
     <orderEntry type="library" name="org.mongodb:mongo-java-driver:2.12.3" level="project" />
     <orderEntry type="library" name="com.jolbox:bonecp:0.8.0.RELEASE" level="project" />
-    <orderEntry type="library" name="BossbarAPI" level="project" />
-    <orderEntry type="library" name="BarAPI (3)" level="project" />
-    <orderEntry type="library" name="LibsDisguises" level="project" />
-    <orderEntry type="library" name="ProtocolLib" level="project" />
-    <orderEntry type="library" name="spigot-1.8.7" level="project" />
-    <orderEntry type="library" name="spigot-fake1-8" level="project" />
-    <orderEntry type="library" name="worldedit" level="project" />
-    <orderEntry type="library" name="jsoup-1.8.3" level="project" />
-    <orderEntry type="library" name="LibsDisguises1" level="project" />
-    <orderEntry type="library" name="spigot-1.9" level="project" />
-    <orderEntry type="library" name="spigot-1.12" level="project" />
-    <orderEntry type="library" name="worldedit1" level="project" />
-    <orderEntry type="library" name="spigot-1.91" level="project" />
-    <orderEntry type="library" name="LibsDisguises2" level="project" />
     <orderEntry type="library" name="spigot-1.7.10-SNAPSHOT-b1657" level="project" />
+    <orderEntry type="library" name="worldedit-bukkit-6.1.7.3" level="project" />
+    <orderEntry type="library" name="spigot-1.7.10-SNAPSHOT-b16571" level="project" />
+    <orderEntry type="library" name="LibsDisguises-9.1.2" level="project" />
+    <orderEntry type="library" name="worldedit-bukkit-6.1.7.31" level="project" />
   </component>
 </module>
